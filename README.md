@@ -1277,8 +1277,8 @@ def f(x, arr=None):
   input().split(separator, maxsplit)
   ```
   
-  #### Example
-  
+#### Example 
+
   ```python
   # Python program showing how to
   # multiple input using split
