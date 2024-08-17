@@ -1339,7 +1339,7 @@ def f(x, arr=None):
     
   [Python Math Module - GeeksforGeeks](https://www.geeksforgeeks.org/python-math-module/)
   
-  #### `math.log()`
+#### `math.log()`
   [Log functions in Python - GeeksforGeeks](https://www.geeksforgeeks.org/log-functions-python/)
     
   ```
@@ -1366,7 +1366,7 @@ def f(x, arr=None):
   print (math.log(14,5))
   ```
   
-  #### `math.ceil()`
+#### `math.ceil()`
   Finding the ceiling and the floor value.
   Ceil value means the smallest integral value greater than the number and the floor value means the greatest integral value smaller than the number. This can be easily calculated using the ceil() and floor() method respectively.
   
@@ -1388,7 +1388,7 @@ def f(x, arr=None):
   print (math.floor(a))
   ```
 
-  #### Other Math Functions
+#### Other Math Functions
   ```python
   # Constants
   # Print the value of Euler e (2.718281828459045)
@@ -1420,8 +1420,7 @@ def f(x, arr=None):
   divmod(dividend,divisor) # returns tuple like (quotient, remainder)
   
   ```
-  
-   
+
 ### Custom Comparators
   - Python cmp_to_key function to sort list with custom compare function
     
