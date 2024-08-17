@@ -1200,6 +1200,7 @@ Instead, consider doing:
 def f(x, arr=None):
     if not arr: arr = []
 ```
+<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ## Clean Code Tips
 
@@ -1258,6 +1259,8 @@ def f(x, arr=None):
 ### Other Tips    
 **ALWAYS** be aware of any code snippet that is being **REPEATED** in your solution. **MODULARITY** #1 Priority. Refactoring is also an important part of  interview.
     - This is usually asked as a follow up after coding the solution. *Are there any changes you want to make to this solution?*
+
+<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ## Miscellaneous
 
@@ -1448,6 +1451,7 @@ def f(x, arr=None):
       else:
           return 0
   ```
+<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 > Python integer division acts a bit weird with -ve numbers ex: -3//2 will give -2 answer instead of -1 so always use int(-3/2) for integer division in problems
 >
@@ -1498,7 +1502,6 @@ def f(x, arr=None):
   ```python
   str(234) = '234'
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### `heapq`
 
@@ -1550,7 +1553,6 @@ def f(x, arr=None):
       node = heapq.heappop(heap)
       print(node.val)
 ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### Array
 
@@ -1569,7 +1571,6 @@ def f(x, arr=None):
     # Sort the meetings in increasing order of their start time.
     intervals.sort(key= lambda x: x[0]) # Assuming intervals = [[start_time, end_time], ...]
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### String
 
@@ -1578,7 +1579,6 @@ def f(x, arr=None):
     S.count('a') = 2
     set(S) = set(['a', 'b'])
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### Set
 
@@ -1587,7 +1587,6 @@ def f(x, arr=None):
     S.add(elem)
     S.remove(elem)
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### `defaultdict()`
 
@@ -1619,7 +1618,6 @@ def f(x, arr=None):
     check = node_dict[0]
     print(check.val)
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### Counter
 
@@ -1629,7 +1627,6 @@ def f(x, arr=None):
     heap = [(-freq, word) for word,freq in count.items()]
     heapq.heapify(heap) # First orders with freq, if freq is same then it orders alphabetically i.e. a first, z last
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### Bisect
 
@@ -1644,7 +1641,6 @@ def f(x, arr=None):
     # Find index of leftmost value greater than or equal to x
     i = bisect_left(a, x)
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### Try-Else-Except-Finally
 
@@ -1662,7 +1658,6 @@ def f(x, arr=None):
     finally:
           # Some code .....(always executed)
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ### Iterator
 
