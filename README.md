@@ -204,7 +204,7 @@ It is not possible to sort a dictionary, only to get a representation of a dicti
 > 
 - *Operations Time Complexities*
     
-    ![List](/img/list.jpg)
+  <img src="./img/list.jpq">
     
 
 ```python
