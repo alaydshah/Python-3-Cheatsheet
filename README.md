@@ -135,10 +135,11 @@ See the [Dictionaries](#dictionaries) section for more info.
 
 > Dictionaries are used to store data values in key:value pairs. *Info about **collections.Counter()** available below.*
 > 
+
 - *Operations Time Complexities*
-    
-    ![Untitled](https://user-images.githubusercontent.com/47276307/172330107-e68e3228-1c76-4bfb-bb38-04d18f94d5b9.jpg)
-    
+
+	![Dictionary](./images/dict.jpg)
+ 
 
 ```python
 dict = {'a':1,'b':2,'c':3}
@@ -203,7 +204,8 @@ It is not possible to sort a dictionary, only to get a representation of a dicti
 > Lists are used to store multiple items in a single variable
 > 
 - *Operations Time Complexities*
-	![List](./img/list.jpg)
+
+	![List](./images/list.jpg)
     
 
 ```python
@@ -446,8 +448,8 @@ See [this GeeksForGeeks article](https://www.geeksforgeeks.org/str-vs-repr-in-py
 > A set is a collection which is unordered, immutable, unindexed, No Duplicates.
 > 
 - *Operations Time Complexities*
-    
-    ![Untitled](https://user-images.githubusercontent.com/47276307/172330132-7a785f5f-bbc6-43b9-b82f-794190813787.jpg)
+
+    ![Set](./images/set.jpg)
     
 
 ```python
@@ -499,7 +501,7 @@ tuple.index(1) # returns index of 1 in array
 > 
 - *Operations Time Complexities*
     
-    ![Untitled](https://user-images.githubusercontent.com/47276307/172330115-78500420-3276-4e45-8ce3-fd668b7eb14e.jpg)
+    ![Deque](./images/deque.jpg)
     
 
 ```python
@@ -532,7 +534,7 @@ queue.reverse() # reverses order of queue elements
 > 
 - *Operations Time Complexities*
     
-    ![Untitled](https://user-images.githubusercontent.com/47276307/172330122-29cf0756-89bc-4654-a4e8-4e318156c7d1.jpg)
+    ![heapq](./images/heapq.jpg)
     
 
 ```python
