@@ -1451,10 +1451,11 @@ def f(x, arr=None):
       else:
           return 0
   ```
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 > Python integer division acts a bit weird with -ve numbers ex: -3//2 will give -2 answer instead of -1 so always use int(-3/2) for integer division in problems
 >
+
+<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ## Others
 
