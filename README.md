@@ -70,8 +70,8 @@
 - [Miscellaneous](#miscellaneous)
   - [How to take multiple line input in python?](#how-to-take-multiple-line-input-in-python)
   - [Important Python Math Functions](#important-python-math-functions)
-    - [math.log()](#mathlog)
-    - [math.ceil()](#mathceil)
+    - [`math.log()`](#mathlog)
+    - [`math.ceil()`](#mathceil)
     - [Other Math Functions](#other-math-functions)
   - [Custom Comparators](#custom-comparators)
 - [Others](#others)
@@ -1339,7 +1339,7 @@ def f(x, arr=None):
     
   [Python Math Module - GeeksforGeeks](https://www.geeksforgeeks.org/python-math-module/)
   
-  #### math.log()
+  #### `math.log()`
   [Log functions in Python - GeeksforGeeks](https://www.geeksforgeeks.org/log-functions-python/)
     
   ```
@@ -1366,7 +1366,7 @@ def f(x, arr=None):
   print (math.log(14,5))
   ```
   
-  #### math.ceil()
+  #### `math.ceil()`
   Finding the ceiling and the floor value.
   Ceil value means the smallest integral value greater than the number and the floor value means the greatest integral value smaller than the number. This can be easily calculated using the ceil() and floor() method respectively.
   
