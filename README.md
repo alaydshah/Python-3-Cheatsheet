@@ -8,13 +8,17 @@
   - [Set Types](#set-types)
   - [Mapping Types](#mapping-types)
 - [Dictionaries](#dictionaries)
+  - [Time Complexities](#time-complexities) 
   - [Iteration](#dictionary-iteration)
   - [Sorting](#dictionary-sorting)
 - [Lists](#lists)
+  - [Time Complexities](#time-complexities) 
+  - [List or String slicing in Python](#list-or-string-slicing-in-python)
   - [Comprehensions](#list-comprehensions)
   - [Initialization](#list-initialization)
   - [Reversal](#list-reversal)
   - [Sorting](#list-sorting)
+- [Tuples](#tuples) 
 - [Strings](#strings)
   - [From List](#from-list)
   - [Python String Constants](#string-constants)
@@ -22,6 +26,16 @@
   - [`split()`](#split)
   - [`strip()`](#strip)
   - [`str()` vs `repr()`](#str-vs-repr)
+- [Sets](#sets)
+  - [Time Complexities](#time-complexities)
+- [Deque](#deque)
+  - [Time Complexities](#time-complexities)
+- [Heapq](#heapq)
+  - [Time Complexities](#time-complexities)
+- [Counter](#counter)
+- [Built-in or Library functions](#built-in-or-library-functions)
+  - [Functions to iterate over list / other iterable (tuple, dictionaries)](#functions-to-iterate-over-list--other-iterable-tuple-dictionaries)
+  - [Getting ASCII value of a character](#getting-ascii-value-of-a-character)
 - [Iterators](#iterators)
   - [Iterator vs Iterable](#iterator-vs-iterable)
   - [How for loop actually works](#how-for-loop-actually-works)
@@ -54,6 +68,19 @@
 - [Common Gotchas](#common-gotchas)
   - [Nested List Initialization](#nested-list-initialization)
   - [Mutable Default Arguments](#mutable-default-arguments)
+- [Clean Code Tips](#clean-code-tips)
+  - [Doc Strings](#doc-strings)
+  - [Asserts](#asserts)
+  - [Other Tips](#other-tips)
+- [Miscellaneous](#miscellaneous)
+  - [How to take multiple line input in python?](#how-to-take-multiple-line-input-in-python)
+  - [Important Python Math Functions](#important-python-math-functions)
+    - [math.log()](#mathlog)
+    - [math.ceil()](#mathceil)
+    - [Other Math Functions](#other-math-functions)
+  - [Custom Comparators](#custom-comparators)
+- [Others](#others)
+- [Resources](#resources)
 
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 ## Built-in Types
@@ -136,11 +163,6 @@ See the [Dictionaries](#dictionaries) section for more info.
 > Dictionaries are used to store data values in key:value pairs. *Info about **collections.Counter()** available below.*
 > 
 
-- *Operations Time Complexities*
-
-	![Dictionary](./images/dict.jpg)
- 
-
 ```python
 dict = {'a':1,'b':2,'c':3}
 
@@ -168,6 +190,10 @@ dict.update({KEY:VALUE})
 # an element of type 'list' will be made for a Key that does not exist
 myDictionary = defaultdict(list) 
 ```
+
+### Time Complexities
+
+  ![Dictionary](./images/dict.jpg)
 
 ### Dictionary Iteration
 Get w/ default value if key not in dict:
@@ -220,11 +246,11 @@ nums.sort() # sorts list [does NOT return sorted list]
 #Python's default sort uses Tim Sort, which is a combination of both merge sort and insertion sort.
 ```
 
-- *Operations Time Complexities*
+### Time Complexities
 
-	![List](./images/list.jpg)
+  ![List](./images/list.jpg)
 
-List or String slicing in Python
+### List or String slicing in Python
 
 - Resource
     
@@ -369,6 +395,24 @@ my_list = list(c for c in my_str if c not in ('a', 'c', 'e'))
  ```
 
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
+
+## Tuples
+
+> A [tuple](https://www.scaler.com/topics/python/tuples-in-python/) is a collection which is ordered, unchangeable and can contain duplicate values
+> 
+
+> Time complexities are similar to list
+>
+    
+
+```python
+tuple = (1,2,3,1)
+
+tuple.count(1) # returns occurence of an item
+tuple.index(1) # returns index of 1 in array
+```
+<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
+
 ## Strings
 
 [Python String isnumeric()](https://www.programiz.com/python-programming/methods/string/isnumeric)
@@ -473,27 +517,10 @@ set.update(anotherSet) # adds anotherSet without duplicate
 
 ```
 
-- *Operations Time Complexities*
+### Time Complexities
 
-    ![Set](./images/set.jpg)
+  ![Set](./images/set.jpg)
 
-<sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
-
-## Tuples
-
-> A [tuple](https://www.scaler.com/topics/python/tuples-in-python/) is a collection which is ordered, unchangeable and can contain duplicate values
-> 
-- *Operations Time Complexities*
-    
-    Similar to list
-    
-
-```python
-tuple = (1,2,3,1)
-
-tuple.count(1) # returns occurence of an item
-tuple.index(1) # returns index of 1 in array
-```
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ## Deque
@@ -524,9 +551,9 @@ queue.count() # obvious
 queue.reverse() # reverses order of queue elements
 ```
 
-- *Operations Time Complexities*
+### Time Complexities
     
-    ![Deque](./images/deque.jpg)
+  ![Deque](./images/deque.jpg)
 
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
@@ -592,9 +619,9 @@ Output will be:
 20
 ```
 
-- *Operations Time Complexities*
+### Time Complexities
     
-    ![heapq](./images/heapq.jpg)
+  ![heapq](./images/heapq.jpg)
 
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
@@ -633,7 +660,7 @@ del couterObject['s']
 
 ## Built-in or Library functions
 
-- Functions to iterate over list / other iterable (tuple, dictionaries)
+### Functions to iterate over list / other iterable (tuple, dictionaries)
     
     ```python
     
@@ -689,14 +716,14 @@ del couterObject['s']
     is that they return the sorted list after inserting and not the index. The
     left() right() logic is also same as above.
     ```
-    
-- Getting ASCII value of a character
+
+### Getting ASCII value of a character
     
     ```python
-    ** ord(str) **
-    # returns ascii value of the character , Example ord("a") = 97
-    ** chr(int) ** 
-    # return character of given ascii value , Example chr(97) = "a"
+      ** ord(str) **
+      # returns ascii value of the character , Example ord("a") = 97
+      ** chr(int) ** 
+      # return character of given ascii value , Example chr(97) = "a"
     ```    
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
@@ -1180,296 +1207,300 @@ def f(x, arr=None):
 
 ## Clean Code Tips
 
-- **Doc Strings -**  Documentation for your functions in the interview to look slick 😎
+### Doc strings
+  Documentation for your functions in the interview to look slick 😎
+  
+  A docstring is short for documentation string.
+  
+  Python docstrings (documentation strings) are the [string](https://www.programiz.com/python-programming/string) literals that appear right after the definition of a function, method, class, or module.
+  
+  Triple quotes are used while writing docstrings. For example:
+  
+  ```
+  def double(num):
+      """Function to double the value"""
+      return 2*num
+  ```
+  
+  Docstrings appear right after the definition of a function, class, or a module. This separates docstrings from multiline comments using triple quotes.
+  
+  The docstrings are associated with the object as their `__doc__` attribute.
+  
+  So, we can access the docstrings of the above function with the following lines of code:
+  
+  ```
+  def double(num):
+      """Function to double the value"""
+      return 2*num
+  print(double.__doc__)
+  ```
+  
+  **Output**
+  
+  ```
+  Function to double the value
+  ```
     
-    A docstring is short for documentation string.
+### Asserts
+  Use **Assert keyword** in python for testing edge cases. Looks more professional.
     
-    Python docstrings (documentation strings) are the [string](https://www.programiz.com/python-programming/string) literals that appear right after the definition of a function, method, class, or module.
-    
-    Triple quotes are used while writing docstrings. For example:
-    
-    ```
-    def double(num):
-        """Function to double the value"""
-        return 2*num
-    ```
-    
-    Docstrings appear right after the definition of a function, class, or a module. This separates docstrings from multiline comments using triple quotes.
-    
-    The docstrings are associated with the object as their `__doc__` attribute.
-    
-    So, we can access the docstrings of the above function with the following lines of code:
-    
-    ```
-    def double(num):
-        """Function to double the value"""
-        return 2*num
-    print(double.__doc__)
-    ```
-    
-    **Output**
-    
-    ```
-    Function to double the value
-    ```
-    
-- Use **Assert keyword** in python for testing edge cases. Looks more professional.
-    
-    ### Definition and Usage
-    
-    The `assert` keyword is used when debugging code.
-    
-    The `assert` keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.
-    
-    You can write a message to be written if the code returns False, check the example below.
-    
-    ```python
-    x = "hello"
-    
-    #if condition returns False, AssertionError is raised:
-    assert x == "goodbye", "x should be 'hello'"
-    ```
-    
-- **ALWAYS** be aware of any code snippet that is being **REPEATED** in your solution. **MODULARITY** #1 Priority. Refactoring is also an important part of  interview.
+  ### Definition and Usage
+  
+  The `assert` keyword is used when debugging code.
+  
+  The `assert` keyword lets you test if a condition in your code returns True, if not, the program will raise an AssertionError.
+  
+  You can write a message to be written if the code returns False, check the example below.
+  
+  ```python
+      x = "hello"
+      
+      #if condition returns False, AssertionError is raised:
+      assert x == "goodbye", "x should be 'hello'"
+  ```
+
+### Other Tips    
+**ALWAYS** be aware of any code snippet that is being **REPEATED** in your solution. **MODULARITY** #1 Priority. Refactoring is also an important part of  interview.
     - This is usually asked as a follow up after coding the solution. *Are there any changes you want to make to this solution?*
 
 ## Miscellaneous
 
-- How to take multiple line input in python?
+### How to take multiple line input in python?
     
-    [Taking multiple inputs from user in Python - GeeksforGeeks](https://www.geeksforgeeks.org/taking-multiple-inputs-from-user-in-python/)
+  [Taking multiple inputs from user in Python - GeeksforGeeks](https://www.geeksforgeeks.org/taking-multiple-inputs-from-user-in-python/)
+  
+  - Using split() method
+  - Using List comprehension
+  
+  **Syntax :**
+  
+  ```
+  input().split(separator, maxsplit)
+  ```
+  
+  #### Example
+  
+  ```python
+  # Python program showing how to
+  # multiple input using split
+   
+  # taking two inputs at a time
+  x, y = input("Enter a two value: ").split()
+  print("Number of boys: ", x)
+  print("Number of girls: ", y)
+  print()
+   
+  # taking three inputs at a time
+  x, y, z = input("Enter a three value: ").split()
+  print("Total number of students: ", x)
+  print("Number of boys is : ", y)
+  print("Number of girls is : ", z)
+  print()
+   
+  # taking two inputs at a time
+  a, b = input("Enter a two value: ").split()
+  print("First number is {} and second number is {}".format(a, b))
+  print()
+   
+  # taking multiple inputs at a time
+  # and type casting using list() function
+  x = list(map(int, input("Enter a multiple value: ").split()))
+  print("List of students: ", x)
+  ```
+  
+  ```python
+  # Python program showing
+  # how to take multiple input
+  # using List comprehension
+   
+  # taking two input at a time
+  x, y = [int(x) for x in input("Enter two value: ").split()]
+  print("First Number is: ", x)
+  print("Second Number is: ", y)
+  print()
+   
+  # taking three input at a time
+  x, y, z = [int(x) for x in input("Enter three value: ").split()]
+  print("First Number is: ", x)
+  print("Second Number is: ", y)
+  print("Third Number is: ", z)
+  print()
+   
+  # taking two inputs at a time
+  x, y = [int(x) for x in input("Enter two value: ").split()]
+  print("First number is {} and second number is {}".format(x, y))
+  print()
+   
+  # taking multiple inputs at a time
+  x = [int(x) for x in input("Enter multiple value: ").split()]
+  print("Number of list is: ", x)
+  
+  # taking multiple inputs at a time separated by comma
+  x = [int(x) for x in input("Enter multiple value: ").split(",")]
+  print("Number of list is: ", x)
+  ```
+  
+### Important Python Math Functions
     
-    - Using split() method
-    - Using List comprehension
+  [Python Math Module - GeeksforGeeks](https://www.geeksforgeeks.org/python-math-module/)
+  
+  #### math.log()
+  [Log functions in Python - GeeksforGeeks](https://www.geeksforgeeks.org/log-functions-python/)
     
-    **Syntax :**
+  ```
+  Syntax :
+  math.log(a,Base)
+  Parameters :a : The numeric value
+  Base :  Base to which the logarithm has to be computed.
+  Return Value :
+  Returns natural log if 1 argument is passed and log with
+  specified base if 2 arguments are passed.
+  Exceptions :
+  Raises ValueError is a negative no. is passed as argument.
+  ```
+  
+  ```python
+  import math
     
-    ```
-    input().split(separator, maxsplit)
-    ```
+  # Printing the log base e of 14
+  print ("Natural logarithm of 14 is : ", end="")
+  print (math.log(14))
     
-    ## Example
+  # Printing the log base 5 of 14
+  print ("Logarithm base 5 of 14 is : ", end="")
+  print (math.log(14,5))
+  ```
+  
+  #### math.ceil()
+  Finding the ceiling and the floor value.
+  Ceil value means the smallest integral value greater than the number and the floor value means the greatest integral value smaller than the number. This can be easily calculated using the ceil() and floor() method respectively.
+  
+  ```python
+  # Python code to demonstrate the working of
+  # ceil() and floor()
+   
+  # importing "math" for mathematical operations
+  import math
+   
+  a = 2.3
+   
+  # returning the ceil of 2.3 (i.e 3)
+  print ("The ceil of 2.3 is : ", end="")
+  print (math.ceil(a))
+   
+  # returning the floor of 2.3 (i.e 2)
+  print ("The floor of 2.3 is : ", end="")
+  print (math.floor(a))
+  ```
+
+  #### Other Math Functions
+  ```python
+  # Constants
+  # Print the value of Euler e (2.718281828459045)
+  print (math.e)
+  # Print the value of pi (3.141592653589793)
+  print (math.pi)
+  print (math.gcd(b, a))
+  print (pow(3,4))
+  # print the square root of 4
+  print(math.sqrt(4))
+  a = math.pi/6
+  b = 30
+   
+  # returning the converted value from radians to degrees
+  print ("The converted value from radians to degrees is : ", end="")
+  print (math.degrees(a))
+   
+  # returning the converted value from degrees to radians
+  print ("The converted value from degrees to radians is : ", end="")
+  print (math.radians(b))
+  ```
+  
+  ```python
+  
+  ** bin(int) **
+  bin(anyNumber) # Returns binary version of number
+  
+  ** divmod(int,int) **
+  divmod(dividend,divisor) # returns tuple like (quotient, remainder)
+  
+  ```
+  
+   
+### Custom Comparators
+  - Python cmp_to_key function to sort list with custom compare function
     
-    ```python
-    # Python program showing how to
-    # multiple input using split
-     
-    # taking two inputs at a time
-    x, y = input("Enter a two value: ").split()
-    print("Number of boys: ", x)
-    print("Number of girls: ", y)
-    print()
-     
-    # taking three inputs at a time
-    x, y, z = input("Enter a three value: ").split()
-    print("Total number of students: ", x)
-    print("Number of boys is : ", y)
-    print("Number of girls is : ", z)
-    print()
-     
-    # taking two inputs at a time
-    a, b = input("Enter a two value: ").split()
-    print("First number is {} and second number is {}".format(a, b))
-    print()
-     
-    # taking multiple inputs at a time
-    # and type casting using list() function
-    x = list(map(int, input("Enter a multiple value: ").split()))
-    print("List of students: ", x)
-    ```
+      [Sort a list of lists with a custom compare function](https://stackoverflow.com/questions/5213033/sort-a-list-of-lists-with-a-custom-compare-function)
     
-    ```python
-    # Python program showing
-    # how to take multiple input
-    # using List comprehension
-     
-    # taking two input at a time
-    x, y = [int(x) for x in input("Enter two value: ").split()]
-    print("First Number is: ", x)
-    print("Second Number is: ", y)
-    print()
-     
-    # taking three input at a time
-    x, y, z = [int(x) for x in input("Enter three value: ").split()]
-    print("First Number is: ", x)
-    print("Second Number is: ", y)
-    print("Third Number is: ", z)
-    print()
-     
-    # taking two inputs at a time
-    x, y = [int(x) for x in input("Enter two value: ").split()]
-    print("First number is {} and second number is {}".format(x, y))
-    print()
-     
-    # taking multiple inputs at a time
-    x = [int(x) for x in input("Enter multiple value: ").split()]
-    print("Number of list is: ", x)
+      #### How the custom comparator works
     
-    # taking multiple inputs at a time separated by comma
-    x = [int(x) for x in input("Enter multiple value: ").split(",")]
-    print("Number of list is: ", x)
-    ```
+      When providing a custom comparator, it should generally return an integer/float value that follows the following pattern (as with most other programming languages and frameworks):
     
-- Important Python Math Functions
+      - return a negative value (`< 0`) when the left item should be sorted *before* the right item
+      - return a positive value (`> 0`) when the left item should be sorted *after* the right item
+      - return `0` when both the left and the right item have the same weight and should be ordered "equally" without precedence
     
-    [Python Math Module - GeeksforGeeks](https://www.geeksforgeeks.org/python-math-module/)
+      ```python
+      from functools import cmp_to_key
+      sorted(mylist, key=cmp_to_key(compare))
     
-    - Log Function
-    
-    [Log functions in Python - GeeksforGeeks](https://www.geeksforgeeks.org/log-functions-python/)
-    
-    ```
-    Syntax :
-    math.log(a,Base)
-    Parameters :a : The numeric value
-    Base :  Base to which the logarithm has to be computed.
-    Return Value :
-    Returns natural log if 1 argument is passed and log with
-    specified base if 2 arguments are passed.
-    Exceptions :
-    Raises ValueError is a negative no. is passed as argument.
-    ```
-    
-    ```python
-    import math
-      
-    # Printing the log base e of 14
-    print ("Natural logarithm of 14 is : ", end="")
-    print (math.log(14))
-      
-    # Printing the log base 5 of 14
-    print ("Logarithm base 5 of 14 is : ", end="")
-    print (math.log(14,5))
-    ```
-    
-    - Finding the ceiling and the floor value
-        - Ceil value means the smallest integral value greater than the number and the floor value means the greatest integral value smaller than the number. This can be easily calculated using the ceil() and floor() method respectively.
-    
-    ```python
-    # Python code to demonstrate the working of
-    # ceil() and floor()
-     
-    # importing "math" for mathematical operations
-    import math
-     
-    a = 2.3
-     
-    # returning the ceil of 2.3 (i.e 3)
-    print ("The ceil of 2.3 is : ", end="")
-    print (math.ceil(a))
-     
-    # returning the floor of 2.3 (i.e 2)
-    print ("The floor of 2.3 is : ", end="")
-    print (math.floor(a))
-    
-    ```
-    
-    - Other Important functions
-    
-    ```python
-    # Constants
-    # Print the value of Euler e (2.718281828459045)
-    print (math.e)
-    # Print the value of pi (3.141592653589793)
-    print (math.pi)
-    print (math.gcd(b, a))
-    print (pow(3,4))
-    # print the square root of 4
-    print(math.sqrt(4))
-    a = math.pi/6
-    b = 30
-     
-    # returning the converted value from radians to degrees
-    print ("The converted value from radians to degrees is : ", end="")
-    print (math.degrees(a))
-     
-    # returning the converted value from degrees to radians
-    print ("The converted value from degrees to radians is : ", end="")
-    print (math.radians(b))
-    ```
-    
-    ```python
-    
-    ** bin(int) **
-    bin(anyNumber) # Returns binary version of number
-    
-    ** divmod(int,int) **
-    divmod(dividend,divisor) # returns tuple like (quotient, remainder)
-    
-    ```
-    
-- Python cmp_to_key function to sort list with custom compare function
-    
-    [Sort a list of lists with a custom compare function](https://stackoverflow.com/questions/5213033/sort-a-list-of-lists-with-a-custom-compare-function)
-    
-    ## How the custom comparator works
-    
-    When providing a custom comparator, it should generally return an integer/float value that follows the following pattern (as with most other programming languages and frameworks):
-    
-    - return a negative value (`< 0`) when the left item should be sorted *before* the right item
-    - return a positive value (`> 0`) when the left item should be sorted *after* the right item
-    - return `0` when both the left and the right item have the same weight and should be ordered "equally" without precedence
-    
-    ```python
-    from functools import cmp_to_key
-    sorted(mylist, key=cmp_to_key(compare))
-    
-    # Example
-    def compare(item1, item2):
-        if fitness(item1) < fitness(item2):
-            return -1
-        elif fitness(item1) > fitness(item2):
-            return 1
-        else:
-            return 0
-    ```
+      # Example
+      def compare(item1, item2):
+          if fitness(item1) < fitness(item2):
+              return -1
+          elif fitness(item1) > fitness(item2):
+              return 1
+          else:
+              return 0
+      ```
     
 
 > Python integer division acts a bit weird with -ve numbers ex: -3//2 will give -2 answer instead of -1 so always use int(-3/2) for integer division in problems
 >
 
-## ord()
-```python
-ord('9') - ord('0') = 9
-ord('c') - ord('a') = 2
-```
+## Others
+  ### ord()
+  ```python
+  ord('9') - ord('0') = 9
+  ord('c') - ord('a') = 2
+  ```
 
-## chr()
-```python
-chr(97) = a
-chr(ord('a') + 1) = b
+  ### chr()
+  ```python
+  chr(97) = a
+  chr(ord('a') + 1) = b
+  
+  ## isdigit()
+  ```python
+  '2'.isdigit() == True
+  'a'.isdigit() == False
+  ```
 
-## isdigit()
-```python
-'2'.isdigit() == True
-'a'.isdigit() == False
-```
+  ### isalpha()
+  ```python
+  '2'.isalpha() == False
+  'a'.isalpha() == True
+  ```
 
-## isalpha()
-```python
-'2'.isalpha() == False
-'a'.isalpha() == True
-```
+  ### isspace()
+  ```python
+  ''.isspace() == False
+  ' '.isspace() == True
+  ```
 
-## isspace()
-```python
-''.isspace() == False
-' '.isspace() == True
-```
+  ### int()
+  ```python
+  int('234') = 234
+  ```
 
-## int()
-```python
-int('234') = 234
-```
+  ### str()
+  ```python
+  str(234) = '234'
+  ```
 
-## str()
-```python
-str(234) = '234'
-```
-
-## heapq
-```python
-import heapq
+  ### heapq
+  ```python
+  import heapq
 
 # Initialize Heap
 minHeap = []
@@ -1518,122 +1549,123 @@ while heap:
 
 ```
 
-## Array
-```python
-arr = [ele1, ele2, ele3]
-filtered = filter(lambda x : x >=0, arr)
-min_positive = min(filtered)
-
-# Remove an element
-arr.remove(ele1)
-
-# Remove element based on index
-arr.pop(index) # Returns the value of the element at that index
-del arr[index]
-
-# Sort the meetings in increasing order of their start time.
-intervals.sort(key= lambda x: x[0]) # Assuming intervals = [[start_time, end_time], ...]
-```
-
-## String
-```python
-S = 'aab'
-S.count('a') = 2
-set(S) = set(['a', 'b'])
-```
-
-### Set
-```python
-S = set() # or S = {'a', 'e', 'i', 'u'}
-S.add(elem)
-S.remove(elem)
-```
-### defaultdict
-```python
-from collections import defaultdict
-
-d = defaultdict(lambda : [])
-d[key].append(value) 
-
-# Iterate over keys:
-for k in d:
-  print(k)
-
-# Iterate over keys and values:
-for k,v in d.items():
-  print(k,v)
+  ### Array
+  ```python
+  arr = [ele1, ele2, ele3]
+  filtered = filter(lambda x : x >=0, arr)
+  min_positive = min(filtered)
   
-# Delete an item from dictionary:
-del d[key]  
+  # Remove an element
+  arr.remove(ele1)
+  
+  # Remove element based on index
+  arr.pop(index) # Returns the value of the element at that index
+  del arr[index]
+  
+  # Sort the meetings in increasing order of their start time.
+  intervals.sort(key= lambda x: x[0]) # Assuming intervals = [[start_time, end_time], ...]
+  ```
 
-# Custom Default Val
-class Node:
-    def __init__(self, val=-1):
-        self.val = val
-        self.next = None
-        self.prev = None
-        
-node_dict = defaultdict(Node)
-check = node_dict[0]
-print(check.val)
-```
+  ### String
+  ```python
+  S = 'aab'
+  S.count('a') = 2
+  set(S) = set(['a', 'b'])
+  ```
 
-### Counter
-```python
-words = ["i", "love", "leetcode", "i", "love", "coding"]
-count = collections.Counter(words) # Counter({u'i': 2, u'love': 2, u'coding': 1, u'leetcode': 1}) --> Not necessarily in same order
-heap = [(-freq, word) for word,freq in count.items()]
-heapq.heapify(heap) # First orders with freq, if freq is same then it orders alphabetically i.e. a first, z last
-```
+  ### Set
+  ```python
+  S = set() # or S = {'a', 'e', 'i', 'u'}
+  S.add(elem)
+  S.remove(elem)
+  ```
 
-### Bisect
-This module provides support for maintaining a list in sorted order without having to sort the list after each insertion. For long lists of items with expensive comparison operations, this can be an improvement over the more common approach. The module is called bisect because it uses a basic bisection algorithm to do its work.
+  ### defaultdict
+  ```python
+  from collections import defaultdict
+  
+  d = defaultdict(lambda : [])
+  d[key].append(value) 
+  
+  # Iterate over keys:
+  for k in d:
+    print(k)
+  
+  # Iterate over keys and values:
+  for k,v in d.items():
+    print(k,v)
+    
+  # Delete an item from dictionary:
+  del d[key]  
+  
+  # Custom Default Val
+  class Node:
+      def __init__(self, val=-1):
+          self.val = val
+          self.next = None
+          self.prev = None
+          
+  node_dict = defaultdict(Node)
+  check = node_dict[0]
+  print(check.val)
+  ```
 
-```python
-a = [1,2,3,4,5,6,7,8,9,10] # Needs to be sorted to use this method
-
-# Find index of leftmost value greater than x
-i = bisect.bisect(a, x)
-
-# Find index of leftmost value greater than or equal to x
-i = bisect_left(a, x)
-```
-
-### Try-Else-Except-Finally
-```python
-try:
-       # Some Code.... 
-
-except:
-       # optional block
-       # Handling of exception (if required)
-
-else:
-       # execute if no exception
-
-finally:
-      # Some code .....(always executed)
-```
-
-### Iterator
-
-```python
-
-# Here is an example of a python inbuilt iterator
-# value can be anything which can be iterate
-iterable_value = 'Geeks'
-iterable_obj = iter(iterable_value)
-
-while True:
-	try:
-		# Iterate by calling next
-		item = next(iterable_obj)
-		print(item)
-		
-	except:
-		# exception will happen when iteration will over
-		break
-```
+  ### Counter
+  ```python
+  words = ["i", "love", "leetcode", "i", "love", "coding"]
+  count = collections.Counter(words) # Counter({u'i': 2, u'love': 2, u'coding': 1, u'leetcode': 1}) --> Not necessarily in same order
+  heap = [(-freq, word) for word,freq in count.items()]
+  heapq.heapify(heap) # First orders with freq, if freq is same then it orders alphabetically i.e. a first, z last
+  ```
+  
+  ### Bisect
+  This module provides support for maintaining a list in sorted order without having to sort the list after each insertion. For long lists of items with expensive comparison operations, this can be an improvement over the more common approach. The module is called bisect because it uses a basic bisection algorithm to do its work.
+  
+  ```python
+  a = [1,2,3,4,5,6,7,8,9,10] # Needs to be sorted to use this method
+  
+  # Find index of leftmost value greater than x
+  i = bisect.bisect(a, x)
+  
+  # Find index of leftmost value greater than or equal to x
+  i = bisect_left(a, x)
+  ```
+  
+  ### Try-Else-Except-Finally
+  ```python
+  try:
+         # Some Code.... 
+  
+  except:
+         # optional block
+         # Handling of exception (if required)
+  
+  else:
+         # execute if no exception
+  
+  finally:
+        # Some code .....(always executed)
+  ```
+  
+  ### Iterator
+  
+  ```python
+  
+  # Here is an example of a python inbuilt iterator
+  # value can be anything which can be iterate
+  iterable_value = 'Geeks'
+  iterable_obj = iter(iterable_value)
+  
+  while True:
+      try:
+          # Iterate by calling next
+          item = next(iterable_obj)
+          print(item)
+          
+      except:
+          # exception will happen when iteration will over
+          break
+  ```
 
 ## Resources
 
