@@ -8,11 +8,9 @@
   - [Set Types](#set-types)
   - [Mapping Types](#mapping-types)
 - [Dictionaries](#dictionaries)
-  - [Time Complexities](#time-complexities) 
   - [Iteration](#dictionary-iteration)
   - [Sorting](#dictionary-sorting)
 - [Lists](#lists)
-  - [Time Complexities](#time-complexities) 
   - [List or String slicing in Python](#list-or-string-slicing-in-python)
   - [Comprehensions](#list-comprehensions)
   - [Initialization](#list-initialization)
@@ -27,11 +25,8 @@
   - [`strip()`](#strip)
   - [`str()` vs `repr()`](#str-vs-repr)
 - [Sets](#sets)
-  - [Time Complexities](#time-complexities)
 - [Deque](#deque)
-  - [Time Complexities](#time-complexities)
 - [Heapq](#heapq)
-  - [Time Complexities](#time-complexities)
 - [Counter](#counter)
 - [Built-in or Library functions](#built-in-or-library-functions)
   - [Functions to iterate over list / other iterable (tuple, dictionaries)](#functions-to-iterate-over-list--other-iterable-tuple-dictionaries)
@@ -191,7 +186,7 @@ dict.update({KEY:VALUE})
 myDictionary = defaultdict(list) 
 ```
 
-### Time Complexities
+##### Time Complexities
 
   ![Dictionary](./images/dict.jpg)
 
@@ -246,7 +241,7 @@ nums.sort() # sorts list [does NOT return sorted list]
 #Python's default sort uses Tim Sort, which is a combination of both merge sort and insertion sort.
 ```
 
-### Time Complexities
+##### Time Complexities
 
   ![List](./images/list.jpg)
 
@@ -517,7 +512,7 @@ set.update(anotherSet) # adds anotherSet without duplicate
 
 ```
 
-### Time Complexities
+##### Time Complexities
 
   ![Set](./images/set.jpg)
 
@@ -551,7 +546,7 @@ queue.count() # obvious
 queue.reverse() # reverses order of queue elements
 ```
 
-### Time Complexities
+##### Time Complexities
     
   ![Deque](./images/deque.jpg)
 
@@ -619,7 +614,7 @@ Output will be:
 20
 ```
 
-### Time Complexities
+##### Time Complexities
     
   ![heapq](./images/heapq.jpg)
 
