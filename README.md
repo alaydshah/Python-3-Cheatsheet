@@ -203,10 +203,6 @@ It is not possible to sort a dictionary, only to get a representation of a dicti
 ## Lists
 > Lists are used to store multiple items in a single variable
 > 
-- *Operations Time Complexities*
-
-	![List](./images/list.jpg)
-    
 
 ```python
 nums = [1,2,3]
@@ -223,6 +219,10 @@ nums.reverse() # reverses original list (nums in this case)
 nums.sort() # sorts list [does NOT return sorted list]
 #Python's default sort uses Tim Sort, which is a combination of both merge sort and insertion sort.
 ```
+
+- *Operations Time Complexities*
+
+	![List](./images/list.jpg)
 
 List or String slicing in Python
 
@@ -446,11 +446,7 @@ See [this GeeksForGeeks article](https://www.geeksforgeeks.org/str-vs-repr-in-py
 ## Sets
 
 > A set is a collection which is unordered, immutable, unindexed, No Duplicates.
-> 
-- *Operations Time Complexities*
-
-    ![Set](./images/set.jpg)
-    
+>  
 
 ```python
 set = {1,2,3}
@@ -476,6 +472,11 @@ set.union(anotherSet) # ...
 set.update(anotherSet) # adds anotherSet without duplicate
 
 ```
+
+- *Operations Time Complexities*
+
+    ![Set](./images/set.jpg)
+
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ## Tuples
@@ -499,10 +500,6 @@ tuple.index(1) # returns index of 1 in array
 
 > A double-ended queue, or deque, has the feature of adding and removing elements from either end.
 > 
-- *Operations Time Complexities*
-    
-    ![Deque](./images/deque.jpg)
-    
 
 ```python
 
@@ -526,16 +523,17 @@ queue.count() # obvious
 
 queue.reverse() # reverses order of queue elements
 ```
+
+- *Operations Time Complexities*
+    
+    ![Deque](./images/deque.jpg)
+
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ## Heapq
 
 > As we know the Heap Data Structure is used to implement the Priority Queue ADT. In python we can directly access a Priority Queue implemented using a Heap by using the **Heapq** library/module.
-> 
-- *Operations Time Complexities*
-    
-    ![heapq](./images/heapq.jpg)
-    
+>  
 
 ```python
 import heapq # (minHeap by Default)
@@ -593,6 +591,11 @@ print(max_element)
 Output will be:
 20
 ```
+
+- *Operations Time Complexities*
+    
+    ![heapq](./images/heapq.jpg)
+
 <sup><sub>[▲ TOP](#table-of-contents)</sub></sup>
 
 ## Counter
