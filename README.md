@@ -1,3 +1,5 @@
+![Untitled](./img/list.jpg)
+
 ## Table of Contents
 - [Built-in Types](#built-in-types)
   - [Boolean Types](#boolean-types)
@@ -203,8 +205,6 @@ It is not possible to sort a dictionary, only to get a representation of a dicti
 > Lists are used to store multiple items in a single variable
 > 
 - *Operations Time Complexities*
-    
-  <img src="./img/list.jpq">
     
 
 ```python
