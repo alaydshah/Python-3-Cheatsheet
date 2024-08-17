@@ -1472,202 +1472,209 @@ def f(x, arr=None):
   'a'.isdigit() == False
   ```
 
-  ### isalpha()
+### `isalpha()`
+
   ```python
   '2'.isalpha() == False
   'a'.isalpha() == True
   ```
 
-  ### isspace()
+### `isspace()`
+
   ```python
   ''.isspace() == False
   ' '.isspace() == True
   ```
 
-  ### int()
+### `int()`
+
   ```python
   int('234') = 234
   ```
 
-  ### str()
+### `str()`
+
   ```python
   str(234) = '234'
   ```
 
-  ### heapq
+### `heapq`
+
   ```python
   import heapq
 
-# Initialize Heap
-minHeap = []
-maxHeap = []
-heapq.heapify(minHeap)
-heapq.heapify(maxHeap)
-
-# Push Elements 
-heapq.heappush(minHeap, num) # (Defaults to minHeap)
-heapq.heappush(maxHeap, -num) # (Workaround through negative sign for maxHeap)
-
-# Peek
-minHeap_smallest = minHeap[0]
-maxHeap_largest = maxHeap[0]
-
-# Create Max Heap of Strings
-class MyString:
-    def __init__(self, word):
-        self.word = word
-
-    def __lt__(self, other):
-        return self.word > other.word
-
-    def __eq__(self, other):
-        return self.word == other.word
-        
-    def __str__(self):
-        return self.word        
-
-heapq.heappush(heap, MyString(word))  
-
-#### Set attr for given class for heap sort ####
-import heapq
-
-class Node(object):
-    def __init__(self, val: int):
-        self.val = val
-
-setattr(Node, "__lt__", lambda self, other: self.val <= other.val)
-heap = [Node(2), Node(0), Node(1), Node(4), Node(2)]
-heapq.heapify(heap)
-
-while heap:
-    node = heapq.heappop(heap)
-    print(node.val)
-
+  # Initialize Heap
+  minHeap = []
+  maxHeap = []
+  heapq.heapify(minHeap)
+  heapq.heapify(maxHeap)
+  
+  # Push Elements 
+  heapq.heappush(minHeap, num) # (Defaults to minHeap)
+  heapq.heappush(maxHeap, -num) # (Workaround through negative sign for maxHeap)
+  
+  # Peek
+  minHeap_smallest = minHeap[0]
+  maxHeap_largest = maxHeap[0]
+  
+  # Create Max Heap of Strings
+  class MyString:
+      def __init__(self, word):
+          self.word = word
+  
+      def __lt__(self, other):
+          return self.word > other.word
+  
+      def __eq__(self, other):
+          return self.word == other.word
+          
+      def __str__(self):
+          return self.word        
+  
+  heapq.heappush(heap, MyString(word))  
+  
+  #### Set attr for given class for heap sort ####
+  import heapq
+  
+  class Node(object):
+      def __init__(self, val: int):
+          self.val = val
+  
+  setattr(Node, "__lt__", lambda self, other: self.val <= other.val)
+  heap = [Node(2), Node(0), Node(1), Node(4), Node(2)]
+  heapq.heapify(heap)
+  
+  while heap:
+      node = heapq.heappop(heap)
+      print(node.val)
 ```
 
-  ### Array
-  ```python
-  arr = [ele1, ele2, ele3]
-  filtered = filter(lambda x : x >=0, arr)
-  min_positive = min(filtered)
-  
-  # Remove an element
-  arr.remove(ele1)
-  
-  # Remove element based on index
-  arr.pop(index) # Returns the value of the element at that index
-  del arr[index]
-  
-  # Sort the meetings in increasing order of their start time.
-  intervals.sort(key= lambda x: x[0]) # Assuming intervals = [[start_time, end_time], ...]
-  ```
+### Array
 
-  ### String
   ```python
-  S = 'aab'
-  S.count('a') = 2
-  set(S) = set(['a', 'b'])
-  ```
-
-  ### Set
-  ```python
-  S = set() # or S = {'a', 'e', 'i', 'u'}
-  S.add(elem)
-  S.remove(elem)
-  ```
-
-  ### defaultdict
-  ```python
-  from collections import defaultdict
-  
-  d = defaultdict(lambda : [])
-  d[key].append(value) 
-  
-  # Iterate over keys:
-  for k in d:
-    print(k)
-  
-  # Iterate over keys and values:
-  for k,v in d.items():
-    print(k,v)
+    arr = [ele1, ele2, ele3]
+    filtered = filter(lambda x : x >=0, arr)
+    min_positive = min(filtered)
     
-  # Delete an item from dictionary:
-  del d[key]  
-  
-  # Custom Default Val
-  class Node:
-      def __init__(self, val=-1):
-          self.val = val
-          self.next = None
-          self.prev = None
-          
-  node_dict = defaultdict(Node)
-  check = node_dict[0]
-  print(check.val)
+    # Remove an element
+    arr.remove(ele1)
+    
+    # Remove element based on index
+    arr.pop(index) # Returns the value of the element at that index
+    del arr[index]
+    
+    # Sort the meetings in increasing order of their start time.
+    intervals.sort(key= lambda x: x[0]) # Assuming intervals = [[start_time, end_time], ...]
   ```
 
-  ### Counter
+### String
+
   ```python
-  words = ["i", "love", "leetcode", "i", "love", "coding"]
-  count = collections.Counter(words) # Counter({u'i': 2, u'love': 2, u'coding': 1, u'leetcode': 1}) --> Not necessarily in same order
-  heap = [(-freq, word) for word,freq in count.items()]
-  heapq.heapify(heap) # First orders with freq, if freq is same then it orders alphabetically i.e. a first, z last
+    S = 'aab'
+    S.count('a') = 2
+    set(S) = set(['a', 'b'])
+  ```
+
+### Set
+
+  ```python
+    S = set() # or S = {'a', 'e', 'i', 'u'}
+    S.add(elem)
+    S.remove(elem)
+  ```
+
+### `defaultdict()`
+
+  ```python
+    from collections import defaultdict
+    
+    d = defaultdict(lambda : [])
+    d[key].append(value) 
+    
+    # Iterate over keys:
+    for k in d:
+      print(k)
+    
+    # Iterate over keys and values:
+    for k,v in d.items():
+      print(k,v)
+      
+    # Delete an item from dictionary:
+    del d[key]  
+    
+    # Custom Default Val
+    class Node:
+        def __init__(self, val=-1):
+            self.val = val
+            self.next = None
+            self.prev = None
+            
+    node_dict = defaultdict(Node)
+    check = node_dict[0]
+    print(check.val)
+  ```
+
+### Counter
+
+  ```python
+    words = ["i", "love", "leetcode", "i", "love", "coding"]
+    count = collections.Counter(words) # Counter({u'i': 2, u'love': 2, u'coding': 1, u'leetcode': 1}) --> Not necessarily in same order
+    heap = [(-freq, word) for word,freq in count.items()]
+    heapq.heapify(heap) # First orders with freq, if freq is same then it orders alphabetically i.e. a first, z last
   ```
   
-  ### Bisect
-  This module provides support for maintaining a list in sorted order without having to sort the list after each insertion. For long lists of items with expensive comparison operations, this can be an improvement over the more common approach. The module is called bisect because it uses a basic bisection algorithm to do its work.
+### Bisect
+
+- This module provides support for maintaining a list in sorted order without having to sort the list after each insertion. For long lists of items with expensive comparison operations, this can be an improvement over the more common approach. The module is called bisect because it uses a basic bisection algorithm to do its work.
   
   ```python
-  a = [1,2,3,4,5,6,7,8,9,10] # Needs to be sorted to use this method
-  
-  # Find index of leftmost value greater than x
-  i = bisect.bisect(a, x)
-  
-  # Find index of leftmost value greater than or equal to x
-  i = bisect_left(a, x)
+    a = [1,2,3,4,5,6,7,8,9,10] # Needs to be sorted to use this method
+    
+    # Find index of leftmost value greater than x
+    i = bisect.bisect(a, x)
+    
+    # Find index of leftmost value greater than or equal to x
+    i = bisect_left(a, x)
   ```
   
-  ### Try-Else-Except-Finally
+### Try-Else-Except-Finally
+
   ```python
-  try:
-         # Some Code.... 
-  
-  except:
-         # optional block
-         # Handling of exception (if required)
-  
-  else:
-         # execute if no exception
-  
-  finally:
-        # Some code .....(always executed)
+    try:
+           # Some Code.... 
+    
+    except:
+           # optional block
+           # Handling of exception (if required)
+    
+    else:
+           # execute if no exception
+    
+    finally:
+          # Some code .....(always executed)
   ```
   
-  ### Iterator
-  
+### Iterator
+
   ```python
   
-  # Here is an example of a python inbuilt iterator
-  # value can be anything which can be iterate
-  iterable_value = 'Geeks'
-  iterable_obj = iter(iterable_value)
-  
-  while True:
-      try:
-          # Iterate by calling next
-          item = next(iterable_obj)
-          print(item)
-          
-      except:
-          # exception will happen when iteration will over
-          break
+    # Here is an example of a python inbuilt iterator
+    # value can be anything which can be iterate
+    iterable_value = 'Geeks'
+    iterable_obj = iter(iterable_value)
+    
+    while True:
+        try:
+            # Iterate by calling next
+            item = next(iterable_obj)
+            print(item)
+            
+        except:
+            # exception will happen when iteration will over
+            break
   ```
 
 ## Resources
 
-- PDF with all Python Data Structures in-depth
-    
-    [Python Data Structure.pdf](https://github.com/AbdulMalikDev/PythonCheatSheet/files/9033162/Python_Cheat_Sheet_Made_by_Abdul_Malik.pdf)
-    
-
-[The Modulo Operation (%) With Negative Numbers in Python](https://betterprogramming.pub/modulo-operation-with-negative-numbers-in-python-38cb7256bb32)
+- PDF with all Python Data Structures in-depth: [Python Data Structure.pdf](https://github.com/AbdulMalikDev/PythonCheatSheet/files/9033162/Python_Cheat_Sheet_Made_by_Abdul_Malik.pdf) 
+- [The Modulo Operation (%) With Negative Numbers in Python](https://betterprogramming.pub/modulo-operation-with-negative-numbers-in-python-38cb7256bb32)
