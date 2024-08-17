@@ -1337,55 +1337,57 @@ def f(x, arr=None):
   
 ### Important Python Math Functions
     
-  [Python Math Module - GeeksforGeeks](https://www.geeksforgeeks.org/python-math-module/)
+- [Python Math Module - GeeksforGeeks](https://www.geeksforgeeks.org/python-math-module/)
   
 #### `math.log()`
-  [Log functions in Python - GeeksforGeeks](https://www.geeksforgeeks.org/log-functions-python/)
-    
-  ```
-  Syntax :
-  math.log(a,Base)
-  Parameters :a : The numeric value
-  Base :  Base to which the logarithm has to be computed.
-  Return Value :
-  Returns natural log if 1 argument is passed and log with
-  specified base if 2 arguments are passed.
-  Exceptions :
-  Raises ValueError is a negative no. is passed as argument.
-  ```
   
-  ```python
-  import math
+- [Log functions in Python - GeeksforGeeks](https://www.geeksforgeeks.org/log-functions-python/)
     
-  # Printing the log base e of 14
-  print ("Natural logarithm of 14 is : ", end="")
-  print (math.log(14))
+    ```
+    Syntax :
+    math.log(a,Base)
+    Parameters :a : The numeric value
+    Base :  Base to which the logarithm has to be computed.
+    Return Value :
+    Returns natural log if 1 argument is passed and log with
+    specified base if 2 arguments are passed.
+    Exceptions :
+    Raises ValueError is a negative no. is passed as argument.
+    ```
     
-  # Printing the log base 5 of 14
-  print ("Logarithm base 5 of 14 is : ", end="")
-  print (math.log(14,5))
-  ```
-  
+    ```python
+    import math
+      
+    # Printing the log base e of 14
+    print ("Natural logarithm of 14 is : ", end="")
+    print (math.log(14))
+      
+    # Printing the log base 5 of 14
+    print ("Logarithm base 5 of 14 is : ", end="")
+    print (math.log(14,5))
+    ```
+
 #### `math.ceil()`
-  Finding the ceiling and the floor value.
-  Ceil value means the smallest integral value greater than the number and the floor value means the greatest integral value smaller than the number. This can be easily calculated using the ceil() and floor() method respectively.
+
+  - Finding the ceiling and the floor value.
+  - Ceil value means the smallest integral value greater than the number and the floor value means the greatest integral value smaller than the number. This can be easily calculated using the ceil() and floor() method respectively.
   
   ```python
-  # Python code to demonstrate the working of
-  # ceil() and floor()
-   
-  # importing "math" for mathematical operations
-  import math
-   
-  a = 2.3
-   
-  # returning the ceil of 2.3 (i.e 3)
-  print ("The ceil of 2.3 is : ", end="")
-  print (math.ceil(a))
-   
-  # returning the floor of 2.3 (i.e 2)
-  print ("The floor of 2.3 is : ", end="")
-  print (math.floor(a))
+    # Python code to demonstrate the working of
+    # ceil() and floor()
+     
+    # importing "math" for mathematical operations
+    import math
+     
+    a = 2.3
+     
+    # returning the ceil of 2.3 (i.e 3)
+    print ("The ceil of 2.3 is : ", end="")
+    print (math.ceil(a))
+     
+    # returning the floor of 2.3 (i.e 2)
+    print ("The floor of 2.3 is : ", end="")
+    print (math.floor(a))
   ```
 
 #### Other Math Functions
@@ -1422,44 +1424,44 @@ def f(x, arr=None):
   ```
 
 ### Custom Comparators
-  - Python cmp_to_key function to sort list with custom compare function
+  - Python cmp_to_key function to sort list with custom compare function: [Sort a list of lists with a custom compare function](https://stackoverflow.com/questions/5213033/sort-a-list-of-lists-with-a-custom-compare-function)
     
-      [Sort a list of lists with a custom compare function](https://stackoverflow.com/questions/5213033/sort-a-list-of-lists-with-a-custom-compare-function)
+#### How the custom comparator works
     
-      #### How the custom comparator works
-    
-      When providing a custom comparator, it should generally return an integer/float value that follows the following pattern (as with most other programming languages and frameworks):
-    
-      - return a negative value (`< 0`) when the left item should be sorted *before* the right item
-      - return a positive value (`> 0`) when the left item should be sorted *after* the right item
-      - return `0` when both the left and the right item have the same weight and should be ordered "equally" without precedence
-    
-      ```python
-      from functools import cmp_to_key
-      sorted(mylist, key=cmp_to_key(compare))
-    
-      # Example
-      def compare(item1, item2):
-          if fitness(item1) < fitness(item2):
-              return -1
-          elif fitness(item1) > fitness(item2):
-              return 1
-          else:
-              return 0
-      ```
-    
+  When providing a custom comparator, it should generally return an integer/float value that follows the following pattern (as with most other programming languages and frameworks):
+
+  - return a negative value (`< 0`) when the left item should be sorted *before* the right item
+  - return a positive value (`> 0`) when the left item should be sorted *after* the right item
+  - return `0` when both the left and the right item have the same weight and should be ordered "equally" without precedence
+
+  ```python
+  from functools import cmp_to_key
+  sorted(mylist, key=cmp_to_key(compare))
+
+  # Example
+  def compare(item1, item2):
+      if fitness(item1) < fitness(item2):
+          return -1
+      elif fitness(item1) > fitness(item2):
+          return 1
+      else:
+          return 0
+  ```
 
 > Python integer division acts a bit weird with -ve numbers ex: -3//2 will give -2 answer instead of -1 so always use int(-3/2) for integer division in problems
 >
 
 ## Others
-  ### ord()
+
+### `ord()`
+
   ```python
   ord('9') - ord('0') = 9
   ord('c') - ord('a') = 2
   ```
 
-  ### chr()
+### `chr()`
+  
   ```python
   chr(97) = a
   chr(ord('a') + 1) = b
